@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Invest or Withdraw
+{% endblock %}
+
+{% block main %}
+    <form action="/addmon" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="invest" placeholder="Amount" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Invest</button>
+        <div class="form-group">
+        <br>
+            <input class="form-control" name="withdraw" placeholder="Amount" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Withdraw</button>
+    </form>
+{% endblock %}

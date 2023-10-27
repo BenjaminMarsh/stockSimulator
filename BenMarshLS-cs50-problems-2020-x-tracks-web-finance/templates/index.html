@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <table style="width: 100%;" class = "table table-striped">
+        <tr>
+            <th>Name</th>
+            <th>Symbol</th>
+            <th>Price</th>
+            <th>Shares</th>
+            <th>Value</th>
+        </tr>
+        {% for company in portfolio %}
+        <tr>
+            <td>{{company['company']}}</td>
+            <td>{{company['symbol']}}</td>
+            <td>{{company['pps']}}</td>
+            <td>{{company['shares']}}</td>
+            <td>{{company['value']}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    Cash: {{cash}}
+    Total Value: {{totalvalue}}
+    
+{% endblock %}

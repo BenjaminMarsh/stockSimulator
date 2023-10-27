@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="usernameset" id="username" placeholder="Username" type="text">
+            <br><span id = "lengthmessage">Username must have 3 or more characters</span>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password1" placeholder="Password" type="password">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password2" placeholder="Confirm Password" type="password">
+        </div>
+        <button class="btn btn-primary" id = "submitbutton" type="submit">Register</button>
+    </form>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $(function(){
+            console.log("page loaded");
+        })
+        $("#username").keyup(function(){
+            console.log($("#username").val());
+            let name = $("#username").val();
+            if(name.length < 3 ){
+                $("#submitbutton").attr('disabled', true);
+            }
+            else{
+                $("#submitbutton").attr('disabled', false);
+            }
+                
+            
+        })
+    </script>
+    
+    
+{% endblock %}
